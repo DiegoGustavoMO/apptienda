@@ -83,7 +83,7 @@ flutter:
   fonts:
     - family: logotienda
       fonts:
-        - asset: assets/fonts/vollkornvariablefont.ttf
+        - asset: assets/fonts/MyFlutterApp.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
