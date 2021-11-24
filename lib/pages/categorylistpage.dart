@@ -1,6 +1,8 @@
 import 'package:apptienda/helpers/appcolors.dart';
 import 'package:apptienda/helpers/utils.dart';
 import 'package:apptienda/models/category.dart';
+import 'package:apptienda/pages/categoybottombar.dart';
+import 'package:apptienda/pages/selectedcategorypage.dart';
 import 'package:apptienda/widgets/categorycard.dart';
 import 'package:apptienda/widgets/categoryicon.dart';
 import 'package:apptienda/widgets/iconfont.dart';
@@ -52,67 +54,27 @@ class CategoryListPage extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.builder(
+                  padding: EdgeInsets.only(bottom: 120),
                   itemCount: categories.length,
                   itemBuilder: (BuildContext ctx, int index) {
-                    return CategoryCard(category: categories[index]);
+                    return CategoryCard(
+                        category: categories[index],
+                        onCardClick: () {
+                          //navegar a otra pagina
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SelectCategoryPage()));
+                        });
                   },
                 ),
               ),
               Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: Container(
-                    decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                      BoxShadow(
-                          blurRadius: 20,
-                          color: Colors.black.withOpacity(0.2),
-                          offset: Offset.zero)
-                    ]),
-                    height: 100,
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ClipOval(
-                          child: Material(
-                            child: IconButton(
-                              icon: Icon(Icons.assignment_outlined,
-                                  color: AppColors.MAIN_COLOR),
-                              onPressed: () {},
-                            ),
-                          ),
-                        ),
-                        ClipOval(
-                          child: Material(
-                            child: IconButton(
-                              icon: Icon(Icons.add_business,
-                                  color: AppColors.MAIN_COLOR),
-                              onPressed: () {},
-                            ),
-                          ),
-                        ),
-                        ClipOval(
-                          child: Material(
-                            child: IconButton(
-                              icon: Icon(Icons.list_alt,
-                                  color: AppColors.MAIN_COLOR),
-                              onPressed: () {},
-                            ),
-                          ),
-                        ),
-                        ClipOval(
-                          child: Material(
-                            child: IconButton(
-                              icon: Icon(Icons.add_shopping_cart,
-                                  color: AppColors.MAIN_COLOR),
-                              onPressed: () {},
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ))
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: CategoryBottomBar(),
+              )
             ],
           ),
         ],
