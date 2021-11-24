@@ -6,25 +6,25 @@ class Utils {
   static List<Category> getMockedCategories() {
     return [
       Category(
-          name: "carniceria",
+          name: "Carniceria",
           icon: IconFontHelper.MEATS,
           color: AppColors.MEATS,
           imgName: "carniceria",
           subCategories: []),
       Category(
-          name: "drogueria",
+          name: "Drogueria",
           icon: IconFontHelper.DRUGSTORE,
           color: AppColors.DRUGSTORE,
           imgName: "drogueria",
           subCategories: []),
       Category(
-          name: "miscelanea",
+          name: "Miscelanea",
           icon: IconFontHelper.SMISCELLANY,
           color: AppColors.SMISCELLANY,
           imgName: "miscelanea",
           subCategories: []),
       Category(
-          name: "panaderia",
+          name: "Panaderia",
           icon: IconFontHelper.BAKERY,
           color: AppColors.BAKERY,
           imgName: "panaderia",
